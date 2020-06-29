@@ -10,9 +10,11 @@
     }
   ],
   "require": {
+    "php": ">=7.1",
     "guzzlehttp/guzzle": "^6.0",
     "firebase/php-jwt": "^3.0",
-    "symfony/options-resolver": "^3.0"
+    "symfony/options-resolver": "4.*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
