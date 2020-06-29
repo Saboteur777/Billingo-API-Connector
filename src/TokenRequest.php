@@ -33,8 +33,6 @@ class TokenRequest
      * Generate token request data.
      *
      * @param $timing
-     *
-     * @return string
      */
     public function generate($timing): string
     {
@@ -66,7 +64,7 @@ class TokenRequest
     }
 
     /**
-     * Generate a data string with signature and timing
+     * Generate a data string with signature and timing.
      *
      * @return string
      */
@@ -79,8 +77,6 @@ class TokenRequest
      * Return TRUE if timing is valid.
      *
      * @param $userTiming
-     *
-     * @return bool
      */
     public function validateTiming($userTiming): bool
     {
@@ -92,8 +88,6 @@ class TokenRequest
      *
      * @param $userString
      * @param $timing
-     *
-     * @return bool
      */
     public function validateSignature($userString, $timing): bool
     {
@@ -104,10 +98,6 @@ class TokenRequest
 
     /**
      * Return the data from the token request string.
-     *
-     * @param string $requestString
-     *
-     * @return array
      */
     public static function requestStringData(string $requestString): array
     {
@@ -118,11 +108,6 @@ class TokenRequest
 
     /**
      * Validate a full token request string.
-     *
-     * @param string $requestString
-     * @param string $privateKey
-     *
-     * @return bool
      *
      * @throws SignatureInvalid
      * @throws TimingInvalid
@@ -143,10 +128,6 @@ class TokenRequest
 
     /**
      * Generate hash signature.
-     *
-     * @param string $data
-     *
-     * @return string
      */
     public function sign(string $data): string
     {

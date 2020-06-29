@@ -6,8 +6,6 @@
 
 namespace Billingo\API\Connector\Exceptions;
 
-
 class TimingInvalid extends \Exception
 {
-
 }
