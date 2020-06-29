@@ -11,9 +11,9 @@
   ],
   "require": {
     "php": ">=7.1",
-    "guzzlehttp/guzzle": "^6.0",
-    "firebase/php-jwt": "^3.0",
-    "symfony/options-resolver": "4.*",
+    "guzzlehttp/guzzle": "^7",
+    "firebase/php-jwt": "^5",
+    "symfony/options-resolver": "^5",
     "ext-json": "*"
   },
   "autoload": {
