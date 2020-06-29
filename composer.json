@@ -1,6 +1,6 @@
 {
-  "name": "voov/billingo-api-connector",
-  "description": "Billingo API Connector",
+  "name": "froccsos/billingo-api-connector",
+  "description": "Billingo API Connector - forked",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
