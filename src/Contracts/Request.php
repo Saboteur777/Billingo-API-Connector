@@ -11,41 +11,21 @@ interface Request
 {
     /**
      * GET.
-     *
-     * @param $uri
-     * @param array $data
-     *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function get($uri, $data = []);
+    public function get(string $uri, array $data = []): array;
 
     /**
      * POST.
-     *
-     * @param $uri
-     * @param array $data
-     *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function post($uri, $data = []);
+    public function post(string $uri, array $data = []): array;
 
     /**
      * PUT.
-     *
-     * @param $uri
-     * @param array $data
-     *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function put($uri, $data = []);
+    public function put(string $uri, array $data = []): array;
 
     /**
      * DELETE.
-     *
-     * @param $uri
-     * @param array $data
-     *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function delete($uri, $data = []);
+    public function delete(string $uri, array $data = []): array;
 }

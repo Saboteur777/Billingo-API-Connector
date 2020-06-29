@@ -31,32 +31,24 @@ class TokenRequest
 
     /**
      * Generate token request data.
-     *
-     * @param $timing
      */
-    public function generate($timing): string
+    public function generate(int $timing): string
     {
         return implode('|', [$this->pubKey, $timing]);
     }
 
     /**
      * Return timing information (ie. unix epoch).
-     *
-     * @return int
      */
-    public function generateTiming()
+    public function generateTiming(): int
     {
         return time();
     }
 
     /**
      * Generate data string with signature.
-     *
-     * @param $timing
-     *
-     * @return string
      */
-    public function generateWithSignature($timing)
+    public function generateWithSignature(int $timing): string
     {
         $data = $this->generate($timing);
 
@@ -65,31 +57,24 @@ class TokenRequest
 
     /**
      * Generate a data string with signature and timing.
-     *
-     * @return string
      */
-    public function generateWithSignatureAndTiming()
+    public function generateWithSignatureAndTiming(): string
     {
         return $this->generateWithSignature($this->generateTiming());
     }
 
     /**
      * Return TRUE if timing is valid.
-     *
-     * @param $userTiming
      */
-    public function validateTiming($userTiming): bool
+    public function validateTiming(int $userTiming): bool
     {
         return abs($this->generateTiming() - $userTiming) <= static::MAX_TIMING_DELTA;
     }
 
     /**
      * Validate user string to be valid.
-     *
-     * @param $userString
-     * @param $timing
      */
-    public function validateSignature($userString, $timing): bool
+    public function validateSignature(string $userString, int $timing): bool
     {
         $data = $this->generate($timing);
 
@@ -115,7 +100,7 @@ class TokenRequest
     public static function validateRequestString(string $requestString, string $privateKey): bool
     {
         $data = static::requestStringData($requestString);
-        $self = new static($data['pubKey'], $privateKey);
+        $self = new self($data['pubKey'], $privateKey);
         if (!$self->validateTiming($data['timing'])) {
             throw new TimingInvalid();
         }
