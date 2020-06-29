@@ -1,4 +1,6 @@
-# Billingo API Connector
+# Billingo API Connector - FORKED
+
+This package is forked from: https://github.com/voov/Billingo-API-Connector
 
 This package is the PHP connector for the Billingo API 2.0.
 The full API documentation is available [here](http://billingo.readthedocs.org/en/latest/).
@@ -8,7 +10,7 @@ The full API documentation is available [here](http://billingo.readthedocs.org/e
 The easiest way to install the Connector is using Composer:
 
 ```
-composer require voov/billingo-api-connector
+composer require froccsos/billingo-api-connector
 ```
 
 Then use your framework's autoload, or simply add:
