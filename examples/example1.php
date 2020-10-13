@@ -5,10 +5,10 @@ use Billingo\API\Connector\Exceptions\RequestErrorException as RequestErrorExcep
 use Billingo\API\Connector\HTTP\Request as RequestAlias;
 use GuzzleHttp\Exception\GuzzleException;
 
-define("API_PUBLIC_KEY", "");
-define("API_PRIVATE_KEY", "");
+define('API_PUBLIC_KEY', '');
+define('API_PRIVATE_KEY', '');
 
-require_once "../vendor/autoload.php";
+require_once __DIR__.'/../vendor/autoload.php';
 
 $request = new RequestAlias([
     'private_key' => API_PRIVATE_KEY,
@@ -16,15 +16,13 @@ $request = new RequestAlias([
 ]);
 
 try {
-
     // Get list of clients
-    $clients = $request->get("clients");
+    $clients = $request->get('clients');
     var_dump($clients);
-
 } catch (JSONParseExceptionAlias $e) {
-    echo "Error parsing response";
+    echo 'Error parsing response';
 } catch (RequestErrorExceptionAlias $e) {
-    echo "Error in request";
+    echo 'Error in request';
 } catch (GuzzleException $e) {
     var_dump($e->getMessage());
 }
