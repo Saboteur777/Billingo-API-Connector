@@ -93,7 +93,7 @@ class Request implements \Billingo\API\Connector\Contracts\Request
             throw new RequestErrorException('Error: '.$jsonData['error'], $response->getStatusCode());
         }
 
-        if (array_key_exists('data', $jsonData)) {
+        if (array_key_exists('data', $jsonData) && is_array($jsonData['data'])) {
             return $jsonData['data'];
         }
 
